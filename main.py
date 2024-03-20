@@ -21,10 +21,33 @@ expenses = []
 # load expenses from expenses.json file here
 # https://www.geeksforgeeks.org/read-write-and-parse-json-using-python/ (Python read JSON file)
 pass
-
+import json
 while True:
     command = input("\nChoose command:")
     if command == "1":
+        name  =input("Enter a transaction name: ")
+        sum = input("Enter a transaction sum: ")
+        category = input ("Enter transactions category: ")
+        izdevums = {"Transaction name": name, "Transaction sum": sum, "Transaction category": category}
+        expenses.append(izdevums) 
+    elif command == "2":
+        print(expenses)
+        pass
+    elif command == "3":
+        def biggest_izdevums(expenses):
+            return int(expenses["Transaction sum"])
+        expenses.sort(key = biggest_izdevums)
+        print(expenses[:10])
+        pass
+    elif command == "4":
+        def smalest_izdevums(expenses):
+            return int(expenses["Transaction sum"])    
+        expenses.sort(key = smalest_izdevums)
+        print(expenses[:10])
+        pass
+    elif command == "5":
+        
+
         pass
     if command == "e":
         print("Exiting...")
